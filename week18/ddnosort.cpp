@@ -1,7 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int arr[200002];
+int arr[200002], brr[200002];
+int n, tmp, run = 0;
+
+bool check(int n){
+    for(int i = 0; i < run; ++i){
+        if(n == brr[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
 
 int main(){
     ios::sync_with_stdio(0);
@@ -9,18 +20,16 @@ int main(){
     cout.tie(0);
     freopen("ddnosort.inp", "r", stdin);
     freopen("ddnosort.out", "w", stdout);
-    int n, tmp;
     cin >> n;
     for(int i = 0; i < n; ++i){
         cin >> arr[i];
     }
-    sort(arr, arr+n);
-    tmp = arr[0];
-    cout << tmp << " ";
     for(int i = 0; i < n; ++i){
-        if(arr[i] != tmp){
-            tmp = arr[i];
-            cout << tmp << " ";
+        if(check(arr[i])){
+            cout << arr[i] << " ";
+            // cout << i << " " << run << "\n";
+            brr[run] = arr[i];
+            ++run;
         }
     }
 }
