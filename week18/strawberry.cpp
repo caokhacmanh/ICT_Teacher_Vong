@@ -2,10 +2,10 @@
 using namespace std;
 
 int main(){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    freopen("strawberry.inp", "r", stdin);
-    freopen("strawberry.out", "w", stdout);
+    // ios::sync_with_stdio(0);
+    // cin.tie(0);
+    // cout.tie(0);
+    // freopen("strawberry.inp", "r", stdin);
+    // freopen("strawberry.out", "w", stdout);
     
 }
