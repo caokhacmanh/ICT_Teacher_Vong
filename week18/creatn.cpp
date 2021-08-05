@@ -16,10 +16,10 @@ int main(){
     }
     sort(arr, arr + (3*n));
     ++n;
-    while(--n){
-        // cout << "n: " << n << "\n";
-        sum += arr[3*n - 1] + arr[3*n - 2] + arr[3*n - 3];
+    for(int i = 0; i < n - 1; ++i){
+        // cout << arr[3*i] + arr[3*i+1] + arr[3*i+2] << "\n";
         sum *= 10;
+        sum += arr[3*i] + arr[3*i+1] + arr[3*i+2];
     }
-    cout << sum / 10;
+    cout << sum;
 }
