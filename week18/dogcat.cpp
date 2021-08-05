@@ -31,5 +31,4 @@ int main(){
         }
         cout << tmp << "\n";
     
-    }
 }
