@@ -13,14 +13,27 @@ int main(){
     bool check = true;
     cin >> d >> n;
     for(int j = 0; j < d; ++j){
+        check = true;
+        tot = 0;
+        tmp = 0;
         for(int i = 0; i < n; ++i){
             cin >> arr[i];
         }
         while(check){
+            check = false;
             for(int i = 0; i < n - 1; ++i){
-                
+                if(arr[i] > arr[i+1]){
+                    // cout << "found" << i << "\n";
+                    // arr[i] += arr[i+1];
+                    // arr[i+1] = arr[i] - arr[i+1];
+                    // arr[i] = arr[i] - arr[i+1];
+                    swap(arr[i], arr[i+1]);
+                    check = true;
+                    ++tmp;
+                }
             }
         }
+        cout << tmp << "\n";
     
     }
 }
