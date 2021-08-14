@@ -20,7 +20,7 @@ int main(){
         sum = 0;
         cin >> tmp;
         for(int i = 0;i < n; ++i){
-            if(arr[i] == tmp){
+            if(arr[i] >= tmp){
                 sum = n - i;
                 break;
             }
