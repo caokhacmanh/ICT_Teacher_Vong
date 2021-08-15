@@ -26,6 +26,7 @@ int main(){
         for(int i = 1; i <= n; ++i){
             b[i] = a[i]%e;
         }
+        //
         sort(b+1, b+1+n, greater<int>());
         for(int i = 1; i <= 2*k - x; ++i){
             tmp = tmp + b[i];
