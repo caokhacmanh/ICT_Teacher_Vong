@@ -1,32 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int n, k, s= 0, xoa = 0;
+string x;
+
+
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
     freopen("xoaso.inp", "r", stdin);
     freopen("xoaso.out", "w", stdout);
+    cin >> k >> x;
+    n = x.length();
+    while(xoa < k && s == 0){
+        s = 1;
+        for(int i = 1; i < x.length(); ++i){
+            if(x[i-1] < x[i]){
+                ++xoa;
+                x.erase(i-1,1);
+                s= 0;
+                break;
+            }
+        }
+    }
+    if(xoa < k){
+        int m = x.length();
+        int e = k - xoa;
+        x.erase(m-e,e);
+    }
+    cout << x;
     
-    // int n, tmp = 0;
-    // cin >> n;
-    // string s;
-    // cin >> s;
-    // string out = s.substr(0, s.length() - n);
-    // // cout << "out" << out << "\n";
-    // for(int j = 0; j < out.length(); ++j){
-    //     for(int i = tmp; i <= n + 1 + j; ++i){
-    //         if(s[i] > s[tmp]){
-    //             tmp = i;
-    //         }
-    //     }
-    //     // cout << tmp << " " << n + 1 + j << "gg\n";
-    //     out[j] = s[tmp];
-    //     ++tmp;
-    // }
-    // cout << out;
-    // // string s;
-    // // cin >> s;
-    // // cout << s << "\n";
-    // // cout << "s" << s.length();
 }
