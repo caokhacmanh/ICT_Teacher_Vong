@@ -7,7 +7,7 @@ bool chk = false;
 string s;
 
 // optional
-int a, b, c;
+int arr[200002];
 
 //functions
 
@@ -18,15 +18,18 @@ int main(){
     ios::sync_with_stdio(0);
     cout.tie(0);
     cin.tie(0);
-    freopen("bachuso.inp", "r", stdin);
-    freopen("bachuso.out", "w", stdout);
+    freopen("maxremain.inp", "r", stdin);
+    freopen("maxremain.out", "w", stdout);
 
     cin >> n;
-    c = n % 10;
-    n /= 10;
-    b = n % 10;
-    n /= 10;
-    a = n % 10;
-    cout << (a + b + c) * 111;
+    for(int i = 0; i < n; ++i){
+        cin >> arr[i];
+    }
+    for(int i = 0; i < n; ++i){
+        for(int j = 0; j < n; ++j){
+            ans = max(ans, max(arr[j], arr[i]) % min(arr[i], arr[j]));
+        }
+    }
+    cout << ans;
 
 }
