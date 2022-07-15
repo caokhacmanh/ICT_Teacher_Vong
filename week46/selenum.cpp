@@ -1,45 +1,47 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+int n,m=0,l=0;
+string d[10001],s;
+int main()
+{
+     ios::sync_with_stdio(0);
+     cin.tie(0);
+     cout.tie(0);
+freopen("SELENUM.INP ","r",stdin);
+freopen("SELENUM.OUT ","w ",stdout);
+     cin>>n;
+     for(int i=1;i<=n;i++)
+     {
+         cin>>s;s=s+'a';
+         string x="";
+         for(int t=0;t<s.size();t++)
+            if('0'<=s[t] and s[t]<='9')
+              x=x+s[t];
+            else
+            {
+                if(x!="")
+                {
+                    d[++m]=x;
+                    int q=s.size();
+                    l=max(l,q); x="";
 
-// neccessary
-int n = 0, k = 0, tmp = 0, run = 0, ins = 0 ,ans = 0;
-bool chk = false;
-
-// optional
-int a[500000];
-string s;
-
-
-// funcs
-
-
-
-int main(){
-    freopen("selenum.inp", "r", stdin);
-    freopen("selenum.out", "w", stdout);
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-
-    cin >> n;
-    for(int t = 0; t < n; ++t){
-        tmp = 0;
-        cin >> s;
-        for(int i = 0; i < s.length(); ++i){
-            if(s[i] >= '0' && s[i] <= '9'){
-                for(int j = i; s[j] >= '0' && s[j] <= '9'; ++j){
-                    tmp = j;
-                    ans = ans*10 + (s[j] - '0');
                 }
-                i = tmp+1;
-                a[run] = ans;
-                ++run;
-                ans = 0;
             }
-        }
-    }
-    sort(a, a+run);
-    for(int i = 0; i < run; ++i){
-        cout << a[i] << "\n";
-    }
+
+     }
+     for(int i=1;i<=m;i++)
+     {
+         while(d[i].size()<l)
+             d[i]='0'+d[i];
+     }
+     sort(d+1,d+1+m);
+     for(int i=1;i<=m;i++)
+     {
+         while(d[i][0]=='0' and d[i].size() > 1)
+            d[i].erase(0,1);
+         cout<<d[i]<<'\n';
+     }
+
+
+
 }
